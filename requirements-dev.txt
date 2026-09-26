@@ -1,0 +1,2 @@
+# Public component validation; PyTorch/Transformers are installed separately.
+pytest==9.1.1

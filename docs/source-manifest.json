@@ -1,0 +1,178 @@
+{
+  "source_revision": "f68364279dccb3a307a0fe140d440d203bb658fd",
+  "files": [
+    {
+      "path": "experimental/rg_acceptance.py",
+      "sha256": "5b8f5ea12d75a64908c65a81b0339b5e9713b9cfdca31ea1a07382ad99a4841a",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_attention.py",
+      "sha256": "66e54f909bb44dd1950dc1ba520eb2f36dc4a03e3858a85d815b0630db80b784",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_cache_identity.py",
+      "sha256": "8fcb92f4c7cd54fb371e3255a087468ceb3c82167cde102a7ab6a96b5a3e553a",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_equivalent.py",
+      "sha256": "e3cfacd39d6ff1dcb653ae5087df384f6de6b5e428253c64553ad174095d4dc9",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_live_route.py",
+      "sha256": "c53109fb86746c354681642bb8a6679ca675636f25aca99f01d704c2045bcef3",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_numerics.py",
+      "sha256": "3c4f7a27ee75a954d0b7113735cdcf49e2b85ce100386bd53e778f53ff8e8845",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_prefix.py",
+      "sha256": "85c0ddeb73d393adc97692018134786b8f24cf864f49e8cb6d22c42b50556c57",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_prefix_cache.py",
+      "sha256": "4591ce993fb9539c98bd49aac19216f765a7278fcee0cf52d212b19d7275a795",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_qk64.py",
+      "sha256": "5268aabeed1840a18cce091064c828721c5ec8bc2b44e083348fcccefbea3957",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_reference_rne.py",
+      "sha256": "853a2bdc54449cbd210db2f3298314b354c5c34d60c638446cb45edf24ce2480",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_retrieval.py",
+      "sha256": "40427366f58ab7cea8fa3f4931b2fef77b1edcbbc35fc171008d7b024f9f3f8c",
+      "mode": "unchanged"
+    },
+    {
+      "path": "experimental/rg_tiled_softmax.py",
+      "sha256": "7f52ddb06eeccdf186015adf7dca46961f41507b7692f84a2163e6b2dbcba6a8",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_acceptance.py",
+      "sha256": "364e00ae147f5d82192d4913dc0f2f7554f7546a631c5f19d162dfc343e842b9",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_attention.py",
+      "sha256": "758d069394d31b59e3a9dd616ed3b375ca0555a0cc8f438ea9896ee97e233688",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_cache_identity.py",
+      "sha256": "cc3e997a6c147d5e4ea58f26b811889255870ec0202c011f8ec038e889a9fe84",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_equivalent.py",
+      "sha256": "d5a315193d5682bc5903d29171b644dc5af6394e34010d089dcdf20a70826bd7",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_live_route.py",
+      "sha256": "fc50c5096aba6063de0efdc897b349825038c0f544cd0fe260b672a8e932d3dc",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_numerics.py",
+      "sha256": "053fd8040708988f118a35b90db1ce4229bb3c51ba4ebede5a5cc65518044bce",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_persisted_store.py",
+      "sha256": "1994f7c1264fbedd37b392a6e628f566d00c9c6268072c2b1b19c7acbe5776c9",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_prefix.py",
+      "sha256": "ab5217b984af51c9488701c6317933f6585f8586a65ba56d65d053ea80bb079b",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_prefix_cache.py",
+      "sha256": "9058bdba8ca8a5221cd022a5b71f332a96082e09acf39f3ff9e7477e78aa441c",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_qk64.py",
+      "sha256": "1d513834cdbb33ac1e5315edfc407911021dc5fb10a31caf98df60b4a008c37d",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_reference_rne.py",
+      "sha256": "490de6d68777422438b1a2465a6bba92a0a5b0deb8e392d4eb1ea170e2c92801",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_retrieval.py",
+      "sha256": "f05d2c659c32b796937cac1e4be41d76df297a90dcab0935c2679cca203e7ba3",
+      "mode": "unchanged"
+    },
+    {
+      "path": "tests/test_rg_tiled_softmax.py",
+      "sha256": "23136be78c72e07c7b8065bdbb279a889ebf5f2ba4135e8264a65f1f3b50cabf",
+      "mode": "unchanged"
+    },
+    {
+      "path": "scripts/rg_lmcache_prefix.py",
+      "symbol": "ensure_ports_available",
+      "ast_sha256": "98dc5e35b2728c8dab8dd479aaa11a96159f2e91f7c334a33b13956c2a5a2507",
+      "mode": "unchanged-extraction"
+    },
+    {
+      "path": "scripts/rg_lmcache_prefix.py",
+      "symbol": "validate_l2_reads",
+      "ast_sha256": "42a4c9938ee908a9ffdff81f0da58e089dc3ab1c77ea55bcecd12e65e78e16de",
+      "mode": "unchanged-extraction"
+    },
+    {
+      "path": "scripts/rg_lmcache_prefix.py",
+      "symbol": "service_ports",
+      "ast_sha256": "874ef3f7162bbaf9e6c2af6965e91e2c6272ced87ea910c4bbee895de4cc820a",
+      "mode": "unchanged-extraction"
+    },
+    {
+      "path": "scripts/rg_lmcache_prefix.py",
+      "symbol": "PrefixStore",
+      "ast_sha256": "deef31ada59bdf2661edc66c146129bfdd01bf8e3392139064273a15b75668a3",
+      "mode": "unchanged-extraction"
+    },
+    {
+      "path": "scripts/rg_lmcache_prefix.py",
+      "symbol": "load_selected_cases",
+      "ast_sha256": "580329db4f414bfc8efc2240370c9fdacdfee50ee10384c63b9fee60220d150a",
+      "mode": "unchanged-extraction"
+    },
+    {
+      "path": "scripts/rg_reference_conversion.py",
+      "symbol": "boundary_cases",
+      "ast_sha256": "7a218fa8b8e82941332db2c03d56170913a2483f4a982257fe89a09b13be2678",
+      "mode": "unchanged-extraction"
+    },
+    {
+      "path": "scripts/rg_retrieval_manifest.py",
+      "sha256": "6de61c4ff7410cb5290ded3409ca3adc77555fa1f8e801e5039aa966b6c00f6f",
+      "source_sha256": "f13feb8671a47159978c38a90d6d5d4b1902971d208547dd479a6db197fab6e5",
+      "mode": "portable-writer-import-only"
+    },
+    {
+      "path": "scripts/rg_tiled_softmax_check.py",
+      "sha256": "174293b45a0ebd7bddaa8a18400addd2494a5fa8a6784266f2a9417df045ab6f",
+      "source_sha256": "10bcefef1d15135a22a5fabf3c3f31bbbbd501bf86abc01224400a293704d8a3",
+      "mode": "portable-writer-import-only"
+    }
+  ]
+}

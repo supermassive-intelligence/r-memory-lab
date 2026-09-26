@@ -1,5 +1,22 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## CacheBlend integration update — 2026-09-26 19:52 UTC
+
+- `rg-blend-storage-20260926-a` failed before generation on Transformers cache
+  iterator metadata. Failed raw archive checksum verified; no result admitted.
+- `rg-blend-storage-20260926-b` (`bc490fd`) completed all ten cases and 70
+  complete generations. Fresh inherited/coverage/GPU transport gates and raw
+  storage/position/output audit PASS. Twenty independent pre-RoPE documents;
+  exact resident-versus-LMCache-reloaded tokens and every-step logits. Terminal
+  archival is in progress. This is not selective recomputation or R quality.
+- `rg-blend-prefill-20260926-b` (`194c03a`) automatically started after CB2
+  acceptance. Fresh full gates precede the real-model selective-recompute check;
+  32 focused component tests passed before launch. No CB3 result admitted yet.
+- The earlier CB3 queue A was interrupted while waiting, before model evaluation,
+  to add an explicit independent-reuse replay arm. Its terminal record is kept.
+- CPU live routing was 55/100 at the latest check. The retrieved-R numerical
+  failure and held-out quality gates remain unpassed.
+
 ## Scope/execution update — 2026-09-26 19:38 UTC
 
 CacheBlend is now required for the MVP. [CB-MVP1](CACHEBLEND_MVP.md) freezes

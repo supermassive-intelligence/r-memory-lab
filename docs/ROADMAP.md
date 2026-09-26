@@ -13,7 +13,7 @@ the numerical, quality, repetition or evidence-admission contracts.
 | Live retrieval routing | Question-only retrieval, compatible stable key, actual LMCache delivery, raw payload audit | Running, 49/100; first ten-case audit passed |
 | Live generation | Connect fresh routing to generation; complete controls and raw logit audit | Not complete |
 | Emulated R attention | Matched numerical checks, no persistent GPU duplicate of R-owned KV, repeat | Retrieved 100-case numerical gate failed; captured failures replayed, correction pending |
-| Required CacheBlend composition (M2b) | Independent document KV persistence, position remapping, causal-corrected selective recomputation, matched GPU/R controls | Historical corrected port recovered; new storage/composition checkpoint implemented; integrated quality unpassed |
+| Required CacheBlend composition (M2b) | Independent document KV persistence, position remapping, causal-corrected selective recomputation, matched GPU/R controls | CB1/CB2 ten-case raw audit passed; actual GPU selective-recompute CB3 running; integrated quality/R unpassed |
 | Quality confirmation | Frozen untouched data, declared evidence gain and R non-inferiority bounds | Not passed |
 | Practical serving | End-to-end workload, matched uncached/cached controls, TTFT/completion/throughput | Not established |
 | Longer prefill | Exact native overlap before admitting memory-bounded attention | Tiled 1,024/4,096 native overlap passed; 8,192 allocation failed under 12 GiB cap |

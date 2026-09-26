@@ -37,9 +37,9 @@ R is emulated; current HDD-backed storage is not advertised as NAND hardware.
 | Step | Deliverable | Required gate | State |
 |---|---|---|---|
 | CB0 | Recover prior corrected CacheBlend port and full repeats | Archive/source identity; preserve original causal failure | Complete; [evidence](CACHEBLEND.md) |
-| CB1 | Independent pre-RoPE document encoder and stable identity | No query/answer dependence; all-layer capture; exact native-position reconstruction; incompatible KV rejected | Implemented, validation pending |
-| CB2 | Real LMCache persistence, restart/reload and ordered composition | Byte-identical payloads; valid lengths; remapped resident/reloaded outputs and every-step logits identical; miss/zero controls | Checkpoint implemented, acceptance pending |
-| CB3 | GPU causal-corrected selective recomputation | Fixed layer-1 selection and 0.16 value-difference ratio initially; sparse row trace; future-value causality; exact named full-recompute endpoint | Pending |
+| CB1 | Independent pre-RoPE document encoder and stable identity | No query/answer dependence; all-layer capture; exact native-position reconstruction; incompatible KV rejected | Ten-case checkpoint passed; 20 independent documents |
+| CB2 | Real LMCache persistence, restart/reload and ordered composition | Byte-identical payloads; valid lengths; remapped resident/reloaded outputs and every-step logits identical; miss/zero controls | `rg-blend-storage-20260926-b`: raw audit PASS, 70 complete generations; terminal archival tracked separately |
+| CB3 | GPU causal-corrected selective recomputation | Fixed layer-1 selection and 0.16 value-difference ratio initially; sparse row trace; future-value causality; exact named full-recompute endpoint | `rg-blend-prefill-20260926-b`: running fresh gates; 32 focused tests passed before launch |
 | CB4 | Matched retrieved GPU quality | No evidence / coherent full prefill / independent reuse / selective reuse; same inputs and positions; ten-case smoke then 100-case all-query development | Pending |
 | CB5 | Same composed KV and selected rows on R/G | Existing numerical budgets, no persistent external GPU duplicate, limit/zero controls, independent repeat | Pending; current retrieved-R numerical failure remains failed |
 | CB6 | Live demo, untouched confirmation and reproduction | Evidence-benefit and R non-inferiority gates; live/replay labels; cache/recomputed rows; reproducible complete outputs | Pending |
@@ -71,6 +71,22 @@ Compare these named controls, each with ten complete printed generations:
 This first checkpoint does **not** implement selective recomputation, establish
 answer-quality benefit, or validate R attention. It prepares CB3. Existing
 Mistral results cannot be transferred to this Qwen/storage/retrieval workload.
+
+The first attempt (`rg-blend-storage-20260926-a`) failed before generation
+because the Transformers cache iterator returned auxiliary metadata after K/V.
+The successor extracts K/V explicitly and adds a regression test. The failed
+attempt remains archived; no tolerance or token workload was changed.
+
+CB3 uses the same ten token layouts and a verified private copy of CB2's actual
+LMCache files. The 0.16 fraction applies to document rows; all uncached
+instruction/question rows remain fresh. This is a declared document-only
+adaptation of the corrected algorithm, not original question-cache semantics.
+Its ten arms include native/repeat, ratio-1 full-limit, resident/reloaded/repeated
+blend, independent reuse/repeat and blend/reuse disabled-cache controls. Raw
+tokens/logits, sparse row traces and all 100 complete generations are required.
+Disabled-cache controls execute the same full prompt and must match native;
+they are not operational cache-miss fallback, which remains the named no-evidence
+control. No R attention or aggregate quality claim from this ten-case check.
 
 Fresh inherited tests, unchanged coverage floors and actual GPU transport tests
 precede model execution. Keep two CPUs, 40 GiB host RAM/no swap, a 12 GiB model

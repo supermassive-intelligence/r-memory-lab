@@ -1,4 +1,4 @@
-# Verified checkpoint — 2026-09-26 16:17 UTC
+# Verified checkpoint — 2026-09-26 18:33 UTC
 
 This is a manually verified snapshot from the original research workspace.
 Public component tests are separate; historical raw artifacts are not included.
@@ -7,21 +7,42 @@ Public component tests are separate; historical raw artifacts are not included.
 |---|---|---|
 | `rg-retrieved-cache-20260926-b` | Ten-case smoke, 100-case development, and independent 100-case repeat raw audits PASS; four arms match across deployments | Stored retrieved-document KV fidelity, not evidence-quality improvement or live arbitrary-prompt serving |
 | `rg-retrieved-r-20260926-b` | Ten-case smoke PASS; 100-case development numerical audit FAIL; repeat not launched | Excluded from admitted R-quality results |
-| `rg-live-route-20260926-a` | 39/100 queries completed; ten-case raw delivery audit PASS; process active | Routing/storage only; no new generation |
+| `rg-live-route-20260926-a` | 49/100 queries completed; ten-case raw delivery audit PASS; process active | Routing/storage only; no new generation |
 | `rg-tiled-preflight-20260926-a` | All 14 native attention/probability/replay GPU tensor checks PASS | Not full-model or long-context admission |
 | `rg-tiled-prefill-20260926-a` | Failed startup reserve check before first point | No new timing point or 8,192-token result |
+| `rg-tiled-prefill-20260926-b` | 1,024/4,096 raw audits and exact native-overlap proofs PASS; 8,192 failed a 2 GiB QK/scaling allocation under the unchanged 12 GiB allocator cap | Partial diagnostic sweep; no admitted 8,192 point or crossover |
+| `rg-retrieved-outliers-20260926-a` | Three captured first failures replay exactly, including their original guard decisions | Successful diagnosis/replay, not a numerical correction or R-quality pass |
 | `rg-prefix-sweep-20260925-b` | Native 1,024/2,048/4,096 per-length raw audits PASS; 8,192 exceeded the 12 GiB job allocator budget | Shared-resource, staged-eager, HDD diagnostics only; no practical crossover established |
 
 Retrieved R failure: five failing layer-step guard records among 121,356 recorded
 layer-step checks. Two actual-output failures are the same event in R and R-repeat
 (case index28, decode step9, layer35). This count is a diagnosis, not an acceptance
-rate that excuses the failures. Root-cause analysis remains required.
+rate that excuses the failures. Captured R/R-repeat output reaches a BF16
+rounding midpoint; the binary64 reference falls just below it. One rounded
+element differs by 0.03125, producing normalized L2 0.0010474 above the frozen
+0.001 limit. Further precision-stage attribution and a passing correction remain
+required; neither tolerance nor acceptance was relaxed.
 
 The fresh tiled sweep observed 73,563 MiB free against a fixed 73,728 MiB startup
 minimum: 165 MiB short. It failed before inherited tests or model execution. The
-candidate's mathematics was not rejected by this startup failure.
+candidate's mathematics was not rejected by this startup failure. The subsequent
+B run passed exact native overlap at 1,024/4,096 but failed at 8,192 inside the
+allocator budget, despite approximately 82.8 GiB physical GPU memory free.
+
+The full-corpus retrieved native development evaluation completed with 14% EM
+without evidence versus 11% with retrieved evidence (100 cases,
+`rg-retrieval-queue-20260924-f`). Its raw execution passed, but evidence-quality
+improvement did not. Storage fidelity does not turn this into a quality gain.
+
+Historical CacheBlend reconciliation: `cb-repro-artifact-full-20260919-b`
+completed September 20 with full-set repeats and recorded passing execution
+guards. It is an original-layout **corrected port**, not paper-number replication.
+See [CacheBlend history](CACHEBLEND.md) for the adapted study, later port,
+raw-result hashes, measured quality and remaining limitations.
 
 Completed cache, failed R, and failed tiled runs have checksum-verified raw
 archives in the research storage system. Run IDs and hashes are retained there;
 no private hostnames, paths, credentials, prompts, or raw tensors are published.
-No new aggregate answer-quality metric is asserted by this public snapshot.
+The quality figures here are explicitly scoped historical results, not new
+held-out R-quality confirmation. The [README checklist](../README.md#mvp-checklist)
+tracks unfinished acceptance gates.

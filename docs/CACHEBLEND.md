@@ -87,5 +87,7 @@ generation or reinterpret an archive checksum as a new scientific acceptance.
 CacheBlend motivates selective recomputation when independently cached document
 KV is reused beyond a strict prefix. It does not by itself implement R-side
 attention. The current MVP first validates compatible prefix-KV storage/reload,
-question-only retrieval and R/G placement. CacheBlend-style composition is a
-separate extension, not a completed feature of that MVP.
+question-only retrieval and R/G placement. Following the user's September 26
+scope amendment, CacheBlend-style composition is a **required integration
+milestone**, not an optional extension. It is not yet completed. See the
+[execution plan and gates](CACHEBLEND_MVP.md).

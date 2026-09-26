@@ -4,6 +4,10 @@ Research on **external KV memory for frozen language models**: persist reusable
 document-prefix KV with LMCache, retrieve compatible evidence, and compare
 GPU-resident attention with an emulated R-side attention path.
 
+The target MVP also **requires CacheBlend-style multi-document KV composition
+and selective recomputation**. The current strict-prefix path is a baseline,
+not the final demo. See the [required integration plan](docs/CACHEBLEND_MVP.md).
+
 This is an experimental component release, **not a production R machine or a
 completed end-to-end demo**. Numerical, retrieval-quality, and latency gates are
 reported separately. A failed gate is not hidden by a passing smoke test.
@@ -50,7 +54,7 @@ and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live m
 
 ## MVP checklist
 
-Last checked: **2026-09-26 18:33 UTC**. Checked means the stated subtask has
+Last checked: **2026-09-26 19:38 UTC**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -65,19 +69,31 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
 - [x] **M1r — Development evaluation:** evaluate all 100 queries, including wrong
   evidence and misses. Completed with a negative quality result; not an MVP pass.
 - [ ] **M1r — Live routing:** finish 100 fresh question-to-LMCache delivery cases
-  and their raw audit (49/100 complete; first ten-case audit passed).
+  and their raw audit (54/100 complete; first ten-case audit passed).
 - [ ] **M0/M2 — Retrieved R numerical admission:** diagnose and repair the
   100-case numerical failure, then rerun unchanged gates and independent repeat.
   Captured-failure replay is complete; a passing repair is not.
 - [ ] **M2/M4 — Live generation:** connect fresh routing to GPU generation with
   native/zero/miss controls, then to validated R-side attention. Routing alone
   is not a live answer endpoint.
+- [x] **M2b/CB0 — CacheBlend reference:** recover the completed corrected
+  Blackwell port, repeats and failed original-mask diagnosis.
+- [ ] **M2b/CB1–CB2 — Document persistence/composition:** independently capture
+  pre-RoPE document KV; persist/restart/reload through LMCache; validate new
+  request positions and exact agreement with the resident-composition control.
+  First checkpoint `rg-blend-storage-20260926-a` is running its inherited gates.
+- [ ] **M2b/CB3–CB4 — GPU CacheBlend:** integrate causal-corrected selective
+  recomputation; validate full/zero/miss endpoints and all-query quality against
+  coherent full prefill and independent reuse.
+- [ ] **M2b/CB5 — R CacheBlend:** use the same selected rows/evidence on the
+  R/G path, passing unchanged numerical, ownership and repeat gates.
 - [ ] **M3 — Quality confirmation:** freeze untouched confirmation data; meet
   the evidence-benefit and R non-inferiority gates; independently reproduce.
 - [x] **M4 — Recorded viewer prototype:** historical case replay/export exists
   in the research workspace; it is not yet part of this public component release.
 - [ ] **M4 — Interactive MVP:** ship the live/replay viewer with explicit evidence,
-  cache-hit/fallback and guard status; verify browser access and case export.
+  cache-hit/fallback, cached/recomputed rows and guard status; verify browser
+  access and case export. Required CacheBlend integration must be admitted.
 - [ ] **M5 — Delayed-consumption extension:** run all K=0…36 on the validated
   R/LMCache path, then confirm at most two frozen selections. Historical
   delayed-injection sweeps do not complete this new-path milestone.

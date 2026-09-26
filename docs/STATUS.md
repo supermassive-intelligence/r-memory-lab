@@ -1,5 +1,15 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Scope/execution update — 2026-09-26 19:38 UTC
+
+CacheBlend is now required for the MVP. [CB-MVP1](CACHEBLEND_MVP.md) freezes
+the integration steps. New run `rg-blend-storage-20260926-a`, source `6ee50b6`,
+is running on one Saturn GPU after 25 focused tests passed. Its inherited suite,
+coverage and actual GPU transport tests precede the ten-case document storage/
+composition checkpoint. No new result is admitted yet. This is preparation for
+selective recomputation, not a completed CacheBlend/R path. CPU live routing is
+54/100. The results snapshot below remains explicitly dated.
+
 This is a manually verified snapshot from the original research workspace.
 Public component tests are separate; historical raw artifacts are not included.
 

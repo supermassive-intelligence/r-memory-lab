@@ -54,7 +54,7 @@ and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live m
 
 ## MVP checklist
 
-Last checked: **2026-09-26 19:52 UTC**. Checked means the stated subtask has
+Last checked: **2026-09-26 20:00 UTC**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -69,7 +69,7 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
 - [x] **M1r — Development evaluation:** evaluate all 100 queries, including wrong
   evidence and misses. Completed with a negative quality result; not an MVP pass.
 - [ ] **M1r — Live routing:** finish 100 fresh question-to-LMCache delivery cases
-  and their raw audit (55/100 complete; first ten-case audit passed).
+  and their raw audit (56/100 complete; first ten-case audit passed).
 - [ ] **M0/M2 — Retrieved R numerical admission:** diagnose and repair the
   100-case numerical failure, then rerun unchanged gates and independent repeat.
   Captured-failure replay is complete; a passing repair is not.
@@ -78,15 +78,19 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   is not a live answer endpoint.
 - [x] **M2b/CB0 — CacheBlend reference:** recover the completed corrected
   Blackwell port, repeats and failed original-mask diagnosis.
-- [ ] **M2b/CB1–CB2 — Document persistence/composition:** independently capture
+- [x] **M2b/CB1–CB2 — Ten-case document persistence/composition:** independently capture
   pre-RoPE document KV; persist/restart/reload through LMCache; validate new
   request positions and exact agreement with the resident-composition control.
   Successor `rg-blend-storage-20260926-b` passed its ten-case/70-generation raw
-  audit; durable archive verification is in progress.
-- [ ] **M2b/CB3–CB4 — GPU CacheBlend:** integrate causal-corrected selective
-  recomputation; validate full/zero/miss endpoints and all-query quality against
-  coherent full prefill and independent reuse.
-  `rg-blend-prefill-20260926-b` started automatically after storage acceptance.
+  audit; durable raw archive is checksum-verified.
+- [x] **M2b/CB3 — First GPU selective-recompute checkpoint:**
+  `rg-blend-prefill-20260926-b` passed ten cases/100 complete generations,
+  native full-limit, cache-disabled zero, resident/reloaded and replay checks.
+  Durable raw archive verified; no R or quality-benefit claim.
+- [ ] **M2b/CB4 — All-query CacheBlend quality:** fresh matched no-evidence/miss
+  smoke, 100-case document storage, 100-case selective/reuse/full comparison and
+  independent fresh-engine repeat. `rg-blend-development-20260926-a` is running
+  this automatic sequence; no aggregate quality result admitted yet.
 - [ ] **M2b/CB5 — R CacheBlend:** use the same selected rows/evidence on the
   R/G path, passing unchanged numerical, ownership and repeat gates.
 - [ ] **M3 — Quality confirmation:** freeze untouched confirmation data; meet

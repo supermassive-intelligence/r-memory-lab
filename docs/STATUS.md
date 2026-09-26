@@ -1,5 +1,26 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## CacheBlend milestone update — 2026-09-26 20:00 UTC
+
+Both first integration checkpoints now have passing raw audits and verified
+durable archives: CB2 storage/composition (10 cases, 70 generations, 883 files)
+and CB3 GPU selective recomputation (10 cases, 100 generations, 1,058 files).
+CB3 source `194c03a`; raw-state SHA-256
+`a914306f8bd4d4442db55769ba8a1a0d22988a31bac9d75995fd4862d5949299`.
+These are correctness checkpoints, not admitted quality benefit, R placement,
+paper-number reproduction or performance results.
+
+Next run `rg-blend-development-20260926-a`, source `f1a72a3`, is active on
+Saturn GPU 2. After 35 focused tests passed, it started the automatic sequence:
+fresh ten-case matched no-evidence/miss smoke, 100-case storage, 100-case GPU
+selective/reuse/full quality, independent fresh-engine 100-case repeat. Each
+stage requires fresh inherited tests and raw acceptance; any failure stops it.
+No confirmation data, ratio tuning, new resources or tolerance changes.
+All queries, including retrieval misses, remain in the denominator. Development
+metrics do not establish the final evidence-benefit/R non-inferiority gates.
+
+CPU routing is 56/100. The retrieved-R numerical failure remains unpassed.
+
 ## CacheBlend integration update — 2026-09-26 19:52 UTC
 
 - `rg-blend-storage-20260926-a` failed before generation on Transformers cache

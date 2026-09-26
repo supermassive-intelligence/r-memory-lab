@@ -38,9 +38,9 @@ R is emulated; current HDD-backed storage is not advertised as NAND hardware.
 |---|---|---|---|
 | CB0 | Recover prior corrected CacheBlend port and full repeats | Archive/source identity; preserve original causal failure | Complete; [evidence](CACHEBLEND.md) |
 | CB1 | Independent pre-RoPE document encoder and stable identity | No query/answer dependence; all-layer capture; exact native-position reconstruction; incompatible KV rejected | Ten-case checkpoint passed; 20 independent documents |
-| CB2 | Real LMCache persistence, restart/reload and ordered composition | Byte-identical payloads; valid lengths; remapped resident/reloaded outputs and every-step logits identical; miss/zero controls | `rg-blend-storage-20260926-b`: raw audit PASS, 70 complete generations; terminal archival tracked separately |
-| CB3 | GPU causal-corrected selective recomputation | Fixed layer-1 selection and 0.16 value-difference ratio initially; sparse row trace; future-value causality; exact named full-recompute endpoint | `rg-blend-prefill-20260926-b`: running fresh gates; 32 focused tests passed before launch |
-| CB4 | Matched retrieved GPU quality | No evidence / coherent full prefill / independent reuse / selective reuse; same inputs and positions; ten-case smoke then 100-case all-query development | Pending |
+| CB2 | Real LMCache persistence, restart/reload and ordered composition | Byte-identical payloads; valid lengths; remapped resident/reloaded outputs and every-step logits identical; miss/zero controls | `rg-blend-storage-20260926-b`: raw audit PASS, 70 complete generations; 883-file raw archive verified |
+| CB3 | GPU causal-corrected selective recomputation | Fixed layer-1 selection and 0.16 value-difference ratio initially; sparse row trace; future-value causality; exact named full-recompute endpoint | `rg-blend-prefill-20260926-b`: ten-case/100-generation raw audit PASS; 1,058-file raw archive verified; not quality confirmation |
+| CB4 | Matched retrieved GPU quality | No evidence / coherent full prefill / independent reuse / selective reuse; same inputs and positions; ten-case smoke then 100-case all-query development | `rg-blend-development-20260926-a`: fresh matched smoke ->100 storage ->100 quality -> independent100 repeat, running |
 | CB5 | Same composed KV and selected rows on R/G | Existing numerical budgets, no persistent external GPU duplicate, limit/zero controls, independent repeat | Pending; current retrieved-R numerical failure remains failed |
 | CB6 | Live demo, untouched confirmation and reproduction | Evidence-benefit and R non-inferiority gates; live/replay labels; cache/recomputed rows; reproducible complete outputs | Pending |
 | CB7 | Delayed-consumption study | All K=0…36 with fixed exposure/history; at most two frozen confirmation choices | After immediate composition is admitted |
@@ -95,6 +95,15 @@ stop reserve. No wall-clock cap or competing latency benchmark. Preserve failure
 under their original run IDs and checksum-archive raw payloads/logits/source.
 
 ## Scientific gates remain unchanged
+
+The active 100-case continuation freezes the same top-two selection, truncation,
+token construction and recompute policy before outputs. A fresh ten-case smoke
+adds A, A-repeat and real missing-key fallback; question and decode positions
+remain matched when evidence is absent. It then executes 100-case storage,
+100-case selective/full/reuse quality and an independent fresh-model repeat.
+All stages require fresh inherited tests and raw audits. Complete sample records
+precede development EM/containment reporting. Development scores are not held-out
+confirmation, and no parameter sweep is hidden in this sequence.
 
 Apply [all existing acceptance contracts](ACCEPTANCE.md). Every new arm needs
 named zero/limit/repeat controls; unresolved or failed guards exclude headline

@@ -1,6 +1,6 @@
 # Quality-first MVP roadmap
 
-Snapshot: 2026-09-26 18:33 UTC. The [README task list](../README.md#mvp-checklist)
+Snapshot: 2026-09-27 01:22 UTC. The [README task list](../README.md#mvp-checklist)
 is the compact completion checklist; [STATUS.md](STATUS.md) carries run identities.
 
 September 26 scope amendment: CacheBlend is required, not a post-MVP option.
@@ -10,10 +10,10 @@ the numerical, quality, repetition or evidence-admission contracts.
 | Milestone | Gate | Current state |
 |---|---|---|
 | Stored KV fidelity | Byte-identical reload; named native/zero/miss generation controls; independent repeat | Historical retrieved-cache 100-case development + repeat passed |
-| Live retrieval routing | Question-only retrieval, compatible stable key, actual LMCache delivery, raw payload audit | Running, 49/100; first ten-case audit passed |
+| Live retrieval routing | Question-only retrieval, compatible stable key, actual LMCache delivery, raw payload audit | Running, 82/100; first ten-case audit passed |
 | Live generation | Connect fresh routing to generation; complete controls and raw logit audit | Not complete |
 | Emulated R attention | Matched numerical checks, no persistent GPU duplicate of R-owned KV, repeat | Retrieved 100-case numerical gate failed; captured failures replayed, correction pending |
-| Required CacheBlend composition (M2b) | Independent document KV persistence, position remapping, causal-corrected selective recomputation, matched GPU/R controls | CB1/CB2 and CB3 ten-case raw audits/archive verified;100-case quality+repeat sequence active; integrated quality/R unpassed |
+| Required CacheBlend composition (M2b) | Independent document KV persistence, position remapping, causal-corrected selective recomputation, matched GPU/R controls | GPU100-case development+repeat raw checks/archive verified; blend15% versus absent11% EM; quality gate and R integration unpassed |
 | Quality confirmation | Frozen untouched data, declared evidence gain and R non-inferiority bounds | Not passed |
 | Practical serving | End-to-end workload, matched uncached/cached controls, TTFT/completion/throughput | Not established |
 | Longer prefill | Exact native overlap before admitting memory-bounded attention | Tiled 1,024/4,096 native overlap passed; 8,192 allocation failed under 12 GiB cap |

@@ -1,5 +1,37 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Superseding update — 2026-09-27 01:22 UTC
+
+`rg-blend-development-20260926-a` (source `f1a72a3`) completed matched smoke,
+100-case storage, 100-case GPU quality and exact fresh-engine 100-case repeat.
+Inherited/raw checks PASS; 37,186-file archive checksum verified, manifest SHA256
+`241dcc1bcfc50c77a36becab1f79ea6751f17c733e036a1eea26a31c92c836cf`.
+
+| Development arm | EM | Contains |
+| --- | ---: | ---: |
+| No evidence | 11% | 21% |
+| Coherent full prefill | 12% | 14% |
+| Selective recomputation | 15% | 16% |
+| Independent document reuse | 17% | 18% |
+
+All 100 frozen queries are included. New paired analysis from instrument
+`78a5df2` verifies receipt hashes and the fresh repeat, retaining ten complete
+printed generations per arm. Blend versus absent: six wins/two losses, +4pp EM;
+exploratory paired bootstrap 95% interval [-1,+10]pp (10,000 draws, fixed seed).
+Blend versus independent reuse: one win/three losses, -2pp, interval [-6,+2]pp.
+These intervals are not multiplicity-adjusted or confirmation tests. The +5pp
+evidence-gain gate is not passed; no R, held-out, performance or paper-number
+claim. Contains is separate from EM. Failure-case evidence sufficiency remains
+to be reviewed. The new analysis artifact archive is pending; source raw archive
+is already verified. Earlier “running” entries below are historical snapshots.
+
+Live routing is82/100. A persistent eight-hour queue `rg-window-20260927-a`
+is active: CPU analysis finished; GPU-safe admission watcher will launch exact
+captured R precision attribution, followed by an independent allocation-only
+long-prefill repair/overlap/8192 chain. Thirteen focused tests passed. Unchanged
+72/48 GiB reserves; no GPU currently qualifies. It does not select a numerical
+repair or silently admit failed gates. The existing R100 failure remains failed.
+
 ## CacheBlend milestone update — 2026-09-26 20:00 UTC
 
 Both first integration checkpoints now have passing raw audits and verified

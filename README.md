@@ -54,7 +54,7 @@ and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live m
 
 ## MVP checklist
 
-Last checked: **2026-09-26 20:00 UTC**. Checked means the stated subtask has
+Last checked: **2026-09-27 01:22 UTC**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -69,7 +69,7 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
 - [x] **M1r — Development evaluation:** evaluate all 100 queries, including wrong
   evidence and misses. Completed with a negative quality result; not an MVP pass.
 - [ ] **M1r — Live routing:** finish 100 fresh question-to-LMCache delivery cases
-  and their raw audit (56/100 complete; first ten-case audit passed).
+  and their raw audit (82/100 complete; first ten-case audit passed).
 - [ ] **M0/M2 — Retrieved R numerical admission:** diagnose and repair the
   100-case numerical failure, then rerun unchanged gates and independent repeat.
   Captured-failure replay is complete; a passing repair is not.
@@ -87,10 +87,11 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   `rg-blend-prefill-20260926-b` passed ten cases/100 complete generations,
   native full-limit, cache-disabled zero, resident/reloaded and replay checks.
   Durable raw archive verified; no R or quality-benefit claim.
-- [ ] **M2b/CB4 — All-query CacheBlend quality:** fresh matched no-evidence/miss
+- [x] **M2b/CB4 — All-query CacheBlend development experiment:** fresh matched no-evidence/miss
   smoke, 100-case document storage, 100-case selective/reuse/full comparison and
-  independent fresh-engine repeat. `rg-blend-development-20260926-a` is running
-  this automatic sequence; no aggregate quality result admitted yet.
+  independent fresh-engine repeat. `rg-blend-development-20260926-a` completed;
+  raw guards/repeat and durable archive passed. EM: absent11%, full12%, blend15%,
+  independent reuse17%. Experiment complete; quality-benefit gate **not passed**.
 - [ ] **M2b/CB5 — R CacheBlend:** use the same selected rows/evidence on the
   R/G path, passing unchanged numerical, ownership and repeat gates.
 - [ ] **M3 — Quality confirmation:** freeze untouched confirmation data; meet

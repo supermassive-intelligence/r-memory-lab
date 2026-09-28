@@ -1,5 +1,27 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Progress update — 2026-09-28 23:13 UTC
+
+Direct service/state inspection confirms the recovery chain is progressing.
+`rg-blend-r-20260928-b` (`4cb1ac1`) passed its fresh10-case smoke:160 complete
+generations and30,960 numerical checks. Source/cache restart/CPU RoPE/ownership/
+numerical/named full-zero/native bridge/repeat/raw-output guards PASS.
+Development advanced to59/100; no captured numerical failure or host-pressure
+retry so far. Its prerequisites passed682 inherited tests, unchanged coverage,
+all9 actual GPU transport tests, synthetic and model checks. Full100 audit and
+independent100repeat remain pending; no new aggregate quality claim.
+
+Allocator B is intentionally waiting behind quality, with both report workers
+waiting for prerequisites. Alive services do not imply concurrent GPU work or
+accepted results. At inspection host available~194GiB, system/user pressure0%,
+GPUfree~88GiB. These are instantaneous readings, not a guarantee against OOM.
+
+Interrupted combined run A raw archive is now checksum-verified:13,916files,
+manifest `2f6878eb2b212acbd7d5c44b9919f7bfa8d8c2f73bbe5c77bb6752ab3a0db08c`.
+It remains interrupted/unresolved, not successful. Successor archives still
+wait for terminal completion. Last accepted timing length remains10,240; no
+new timing point, practical crossover or physical NAND/R claim.
+
 ## Recovery update — 2026-09-28 22:33 UTC
 
 The earlier four-service queue did not finish. Combined CB5 run

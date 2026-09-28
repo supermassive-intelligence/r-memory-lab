@@ -57,7 +57,7 @@ and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live m
 
 ## MVP checklist
 
-Last checked: **2026-09-28 22:33 UTC**. Checked means the stated subtask has
+Last checked: **2026-09-28 23:13 UTC**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -100,7 +100,8 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   Fixed-row smoke passed 10 cases/160 generations/30,960 numerical checks;
   full development and independent repeat are not yet admitted.
   Run A was interrupted by host-memory pressure after74 cases; guarded run B
-  has restarted from case1. See the recovery record in STATUS.md.
+  restarted from case1, passed fresh smoke, and reached59/100 development without
+  retries at this snapshot. See the recovery record in STATUS.md.
 - [ ] **M3 — Quality confirmation:** freeze untouched confirmation data; meet
   the evidence-benefit and R non-inferiority gates; independently reproduce.
 - [x] **M4 — Recorded viewer prototype:** historical case replay/export exists

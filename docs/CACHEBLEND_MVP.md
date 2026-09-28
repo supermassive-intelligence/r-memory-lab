@@ -96,6 +96,10 @@ under their original run IDs and checksum-archive raw payloads/logits/source.
 
 ## Combined R checkpoint — 2026-09-28
 
+At23:13UTC, successor B passed fresh10-case/160-generation smoke and reached
+59/100 development with no captured numerical failure or host retry. Full raw
+audit, fresh100repeat and final quality admission remain pending.
+
 Recovery at22:33UTC: first full development interrupted by host oomd at74cases.
 Successor `rg-blend-r-20260928-b` (`4cb1ac1`) restarts smoke/full/repeat from case1,
 adding host-pressure checks and bounded host-stop-only retries. Historical partial

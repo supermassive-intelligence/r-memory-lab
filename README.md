@@ -43,10 +43,13 @@ position-, prompt-policy-, and layout-specific. This is not context-window exten
 
 - Retrieved-document stable-cache reuse passed a 100-case development evaluation
   and independent repeat, preserving native-control tokens and per-step logits.
-- Retrieved R attention passed ten cases but failed its larger numerical audit.
-  No admitted 100-case retrieved R-quality result is claimed.
-- Live question-to-cache routing is in progress; it is not yet a live generation endpoint.
-- The native prefill sweep has accepted diagnostic points through 4,096 tokens;
+- The FP64-accumulation retrieved-prefix R path passed 100 cases and a fresh
+  repeat under unchanged numerical gates. Evidence quality did not improve;
+  historical failed arithmetic paths remain failed.
+- Live question-to-cache routing passed 100 cases; it is not yet a live generation endpoint.
+- Combined R/CacheBlend fixed-row smoke passed; 100-case development and a
+  fresh repeat are in the automatic queue. Adaptive selection is not yet validated.
+- The row-tiled prefill sweep has accepted diagnostic points through 10,240 tokens;
   no practical cache/recompute crossover or physical NAND performance claim is established.
 
 See [status and provenance](docs/STATUS.md), [acceptance contracts](docs/ACCEPTANCE.md),
@@ -54,7 +57,7 @@ and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live m
 
 ## MVP checklist
 
-Last checked: **2026-09-27 01:22 UTC**. Checked means the stated subtask has
+Last checked: **2026-09-28 21:05 UTC**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -68,11 +71,11 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   freeze 100 answer-blind BM25 selections and compatible document-KV identities.
 - [x] **M1r — Development evaluation:** evaluate all 100 queries, including wrong
   evidence and misses. Completed with a negative quality result; not an MVP pass.
-- [ ] **M1r — Live routing:** finish 100 fresh question-to-LMCache delivery cases
-  and their raw audit (82/100 complete; first ten-case audit passed).
-- [ ] **M0/M2 — Retrieved R numerical admission:** diagnose and repair the
-  100-case numerical failure, then rerun unchanged gates and independent repeat.
-  Captured-failure replay is complete; a passing repair is not.
+- [x] **M1r — Live routing:** 100 fresh question-to-LMCache delivery cases
+  completed with all ten ten-case raw audits passing; not live generation.
+- [x] **M0/M2 — Retrieved-prefix R numerical admission:** FP64 accumulation
+  passed 100 cases and a fresh repeat under unchanged gates. This is not native
+  bitwise identity, combined CacheBlend admission, or a quality-benefit pass.
 - [ ] **M2/M4 — Live generation:** connect fresh routing to GPU generation with
   native/zero/miss controls, then to validated R-side attention. Routing alone
   is not a live answer endpoint.
@@ -94,6 +97,8 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   independent reuse17%. Experiment complete; quality-benefit gate **not passed**.
 - [ ] **M2b/CB5 — R CacheBlend:** use the same selected rows/evidence on the
   R/G path, passing unchanged numerical, ownership and repeat gates.
+  Fixed-row smoke passed 10 cases/160 generations/30,960 numerical checks;
+  full development and independent repeat are not yet admitted.
 - [ ] **M3 — Quality confirmation:** freeze untouched confirmation data; meet
   the evidence-benefit and R non-inferiority gates; independently reproduce.
 - [x] **M4 — Recorded viewer prototype:** historical case replay/export exists
@@ -104,9 +109,10 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
 - [ ] **M5 — Delayed-consumption extension:** run all K=0…36 on the validated
   R/LMCache path, then confirm at most two frozen selections. Historical
   delayed-injection sweeps do not complete this new-path milestone.
-- [ ] **Supporting performance work:** resolve the 8,192-token allocator failure,
-  retain exact native overlap, and measure matched end-to-end cache/recompute
-  curves. No practical crossover is established.
+- [ ] **Supporting performance work:** row-tiled diagnostics pass through 10,240
+  tokens; 12,288 hit the unchanged 12 GiB allocator cap. An allocation-layout
+  follow-up is queued, requiring exact 8K/10K overlap before 12K/16K attempts.
+  No practical crossover is established.
 - [x] **Public component release:** publish the extracted components and passing
   147-test receipt, with explicit reproduction limitations.
 - [ ] **Final handoff:** publish the portable full-model harness, accepted MVP

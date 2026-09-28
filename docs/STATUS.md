@@ -1,5 +1,43 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Superseding update — 2026-09-28 21:05 UTC
+
+- `rg-fp64-validation-20260927-a` (`d8e2645`): retrieved-prefix smoke,
+  100-case development and fresh 100-case repeat PASS; 122,796 numerical checks
+  per full run. Unchanged numerical/placement budgets; all 13 arms repeat exactly.
+  Development EM: native/LMCache/GPU-wide/R each 11%, absent 14%.
+  Numerical admission is not evidence benefit or native-bitwise equivalence.
+  Raw archive verified: 32,086 files, manifest
+  `69d106ec645cfe80cd255e8329f2ac5abd878ddca1e64bc681b772f4a5505f96`.
+- `rg-live-route-20260926-a` (`914976f`): 100/100 fresh retrieval/delivery cases
+  and all ten ten-case raw audits PASS. Not a live answer endpoint. Archive verified:
+  313 files, manifest `a87716b917ea946d6aa360e5ed71f114d3a8146d51abe3e2efd4f96a30adfdff`.
+- `rg-blend-r-20260928-a` (`9e86066`): combined R/CacheBlend smoke PASS,
+  10 cases, 160 complete generations, 30,960 numerical checks. Full 100-case
+  development is running; automatic fresh repeat follows only after audit.
+  Selected rows are frozen from admitted CB4 traces to isolate placement.
+  Named wide-native full/zero controls and exact native F/B/A bridges pass
+  smoke; adaptive live selection and full combined quality remain unpassed.
+  Raw archive is pending terminal completion, not yet verified.
+- `rg-prefix-extended-20260927-a` (`b71299c`): row-tiled 8,192 and 10,240
+  raw audits PASS, including exact repeated 8K tokens/logits/stored KV.
+  At 10,240: median recompute/RAM/filesystem TTFT = 1,698.60/2,221.07/2,664.40 ms.
+  These are shared-resource staged-HF-eager diagnostics on Qwen2.5-3B BF16,
+  RTX PRO 6000 Blackwell Workstation and scratch HDD, not NAND/serving results.
+  12,288 failed a 258 MiB MLP allocation under the 12 GiB job cap; 16,384 was
+  not attempted. No measured crossover. Raw archive verified: 6,402 files,
+  manifest `49f28901761223b50970a6653d5278d9960b7ed9febd07010a1d52f2213b8818`.
+- `rg-allocator-sweep-20260928-a` (`051c4f1`): queued behind combined quality.
+  Only allocation layout changes (`expandable_segments:True`); caps/math stay
+  fixed. Fresh exact 8K/10K anchors precede 12K/16K attempts; stop on failure.
+- `rg-blend-r-report-20260928-a` (`fd46121`): waiting for combined development
+  and repeat. Will export paired analysis and a recorded HTML case review only
+  after all raw audits pass. It is not already available or a live endpoint.
+
+Earlier running/failed statuses below are historical snapshots. Old failed runs
+remain failed; only their explicitly named successors may pass. No held-out
+quality, practical speed, original CacheBlend paper-number, or physical R claim.
+
 ## Superseding update — 2026-09-27 01:22 UTC
 
 `rg-blend-development-20260926-a` (source `f1a72a3`) completed matched smoke,

@@ -94,6 +94,24 @@ allocator, 24 GiB test allocator, 72 GiB initial free-device reserve and 48 GiB
 stop reserve. No wall-clock cap or competing latency benchmark. Preserve failures
 under their original run IDs and checksum-archive raw payloads/logits/source.
 
+## Combined R checkpoint — 2026-09-28
+
+`rg-blend-r-20260928-a` (`9e86066`, CB5-FIXED1) passed its 10-case smoke:
+160 complete generations and 30,960 numerical checks. The automatic 100-case
+development and independent repeat are not yet admitted. The same row selection
+from each admitted CB4 trace is used for GPU and CPU/GPU attention, isolating
+placement from changes in selection. This is not an adaptive live selector.
+
+Actual LMCache restart/reload supplies CPU-owned external KV. Selected/fresh
+rows remain on G through prefill and decode; absolute causal maps account for
+noncontiguous positions. CPU RoPE is checked bitwise against GPU. Temporary
+auditor reference copies are not production ownership or timing evidence.
+FP64 accumulation uses unchanged numerical and placement budgets. Full/zero
+endpoints name independent wide-native H; native F/B/A must retain exact CB4
+outputs. Partial FP64 attention is not claimed bitwise identical to native BF16.
+Failed historical paths remain failed. A terminal-only recorded review/report
+is queued after the full repeat; live generation and confirmation remain work.
+
 ## Scientific gates remain unchanged
 
 The completed 100-case continuation froze the same top-two selection, truncation,

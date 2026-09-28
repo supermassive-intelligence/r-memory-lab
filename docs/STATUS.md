@@ -1,5 +1,32 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Recovery update — 2026-09-28 22:33 UTC
+
+The earlier four-service queue did not finish. Combined CB5 run
+`rg-blend-r-20260928-a` was killed by systemd-oomd at21:38:39UTC after74 cases;
+user-cgroup memory pressure exceeded50% for20seconds. Nearby kernel logs show
+global OOM and exhausted swap. Its stale running state is not a completed run.
+Allocator run A failed its inherited GPU-sharing tests: expandable-segment CUDA
+import was denied `pidfd_getfd`. No new sweep points. Its13-file failed archive
+is verified, manifest `6a3dc74a8883bf9770b3af5fc9403447b476f21b4875dfee016d02a8f44b7c6e`.
+Reports failed on missing admission/accepted points. These are not quality passes.
+
+Recovery source `4cb1ac1`:24 focused tests PASS. New actual services:
+`rg-blend-r-20260928-b` runs fresh inherited tests before smoke10/full100/repeat100;
+`rg-allocator-sweep-20260928-b` waits behind it; both corresponding report-b
+workers are waiting. All successor admissions remain pending.
+Host available-memory and system/user pressure now gate admission and stop owned
+children early; at most two retries apply only to explicit host stops, with full
+guards rerun and separate attempt directories. Numerical failures never auto-retry.
+The original74 cases are diagnostic, not spliced into the new evaluation.
+
+The bounded allocator successor disables expandable segments and sets
+`max_split_size_mb:128`, retaining ordinary CUDA sharing. This is not yet a
+validated allocation fix. All inherited GPU tests, exact8K/10K overlaps,12GiB
+model cap and scientific thresholds remain. No security controls disabled or
+system OOM policy changed. Reports now record a clear failure when zero points
+are accepted. No unqualified claim of uninterrupted GPU work or automatic repair.
+
 ## Superseding update — 2026-09-28 21:05 UTC
 
 - `rg-fp64-validation-20260927-a` (`d8e2645`): retrieved-prefix smoke,

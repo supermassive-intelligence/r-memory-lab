@@ -1,6 +1,6 @@
 # Quality-first MVP roadmap
 
-Snapshot: 2026-09-28 21:05 UTC. The [README task list](../README.md#mvp-checklist)
+Snapshot: 2026-09-28 22:33 UTC. The [README task list](../README.md#mvp-checklist)
 is the compact completion checklist; [STATUS.md](STATUS.md) carries run identities.
 
 September 26 scope amendment: CacheBlend is required, not a post-MVP option.
@@ -23,6 +23,9 @@ Immediate order: finish combined fixed-row R/CacheBlend development and repeat,
 review paired quality and failures, then validate adaptive live selection and
 fresh routing-to-generation. Only then freeze untouched quality confirmation.
 The fixed-row smoke passed; full combined admission is pending.
+The first full attempt was host-OOM interrupted; guarded successor B is active.
+The first allocator successor failed CUDA IPC prerequisites; a separately
+declared standard-allocator candidate is queued with all guards unchanged.
 Strict-prefix correctness alone cannot complete the MVP. The long-prefill
 allocator issue is a separate diagnostic task, not grounds to relax quality gates.
 

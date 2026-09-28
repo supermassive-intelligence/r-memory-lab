@@ -96,6 +96,11 @@ under their original run IDs and checksum-archive raw payloads/logits/source.
 
 ## Combined R checkpoint — 2026-09-28
 
+Recovery at22:33UTC: first full development interrupted by host oomd at74cases.
+Successor `rg-blend-r-20260928-b` (`4cb1ac1`) restarts smoke/full/repeat from case1,
+adding host-pressure checks and bounded host-stop-only retries. Historical partial
+results are not spliced or admitted; model/evidence/arithmetic/contracts unchanged.
+
 `rg-blend-r-20260928-a` (`9e86066`, CB5-FIXED1) passed its 10-case smoke:
 160 complete generations and 30,960 numerical checks. The automatic 100-case
 development and independent repeat are not yet admitted. The same row selection

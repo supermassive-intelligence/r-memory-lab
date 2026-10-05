@@ -58,7 +58,7 @@ and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live m
 
 ## MVP checklist
 
-Last checked: **2026-10-05 04:54 UTC**. Checked means the stated subtask has
+Last checked: **2026-10-05 05:12 UTC**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -78,8 +78,9 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   passed 100 cases and a fresh repeat under unchanged gates. This is not native
   bitwise identity, combined CacheBlend admission, or a quality-benefit pass.
 - [ ] **M2/M4 — Live generation:** connect fresh routing to GPU generation with
-  native/zero/miss controls, then to validated R-side attention. Routing alone
-  is not a live answer endpoint.
+  native/zero/miss controls, then to validated R-side attention. Implemented in
+  the research harness;76focused tests pass. `rg-blend-online-20261005-a` is
+  queued behind the sweep and routing/selection gates. No HTTP endpoint yet.
 - [x] **M2b/CB0 — CacheBlend reference:** recover the completed corrected
   Blackwell port, repeats and failed original-mask diagnosis.
 - [x] **M2b/CB1–CB2 — Ten-case document persistence/composition:** independently capture
@@ -102,8 +103,8 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   matched FP64 GPU control, not native BF16. Evidence-benefit gate still unpassed.
 - [ ] **M2b/CB5 — Request-time selection:** compute rows from current request
   and loaded document KV, then share the map with W/R. `rg-blend-live-20261005-a`
-  is executing smoke prerequisites after48focused tests; full-model smoke and
-  100-case repeat pending. This is not yet a live inference endpoint.
+  passed its10-case smoke (160 generations,30,960 numerical checks);100-case
+  development and fresh repeat are running/queued. Not a live inference endpoint.
 - [ ] **M3 — Quality confirmation:** freeze untouched confirmation data; meet
   the evidence-benefit and R non-inferiority gates; independently reproduce.
 - [x] **M4 — Recorded viewer prototype:** historical case replay/export exists

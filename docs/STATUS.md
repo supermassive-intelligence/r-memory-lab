@@ -1,5 +1,25 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Superseding update — 2026-10-05 05:12 UTC
+
+`rg-blend-live-20261005-a` smoke now has raw admission:10cases,160complete
+generations,30,960 numerical checks. Development has progressed beyond26cases;
+full100 and fresh100repeat remain pending. No new aggregate quality claim.
+
+Fresh question-to-CacheBlend GPU/R generation implemented in research revision
+`6dd3e58`, with76focused tests passing onSaturn. The successor
+`rg-blend-online-20261005-a` is queued after the independent longer-prefill sweep
+and requires live selector and top-two routing admission. It reconstructs
+tokens from freshly retrieved text and uses resolved keys for actual LMCache
+delivery. Full/zero/missing/numerical/output guards remain mandatory. This is
+not yet an HTTP endpoint or a held-out quality result.
+
+Full-corpus BM25 routing is slow. An isolated execution-only candidate,
+`rg-rank-exact-20261005-a` / `24c1b7a`, uses native rank ordering with exact
+boundary ties.56focused tests passed;100 frozen full-record/score comparisons
+are running. No retriever substitution, ranking change or speedup claim.
+Raw archive/report workers are queued; older failure records remain unchanged.
+
 ## Superseding update — 2026-10-05 04:54 UTC
 
 Combined fixed-row `rg-blend-r-20260928-b` completed smoke, development100 and

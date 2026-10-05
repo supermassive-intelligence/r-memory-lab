@@ -47,8 +47,9 @@ position-, prompt-policy-, and layout-specific. This is not context-window exten
   repeat under unchanged numerical gates. Evidence quality did not improve;
   historical failed arithmetic paths remain failed.
 - Live question-to-cache routing passed 100 cases; it is not yet a live generation endpoint.
-- Combined R/CacheBlend fixed-row smoke passed; 100-case development and a
-  fresh repeat are in the automatic queue. Adaptive selection is not yet validated.
+- Combined R/CacheBlend fixed-row 100-case development and fresh repeat passed
+  correctness gates. Request-time G-side row selection is now under validation;
+  held-out quality and a live answer endpoint remain unpassed.
 - The row-tiled prefill sweep has accepted diagnostic points through 10,240 tokens;
   no practical cache/recompute crossover or physical NAND performance claim is established.
 
@@ -57,7 +58,7 @@ and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live m
 
 ## MVP checklist
 
-Last checked: **2026-09-28 23:13 UTC**. Checked means the stated subtask has
+Last checked: **2026-10-05 04:54 UTC**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -95,13 +96,14 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   independent fresh-engine repeat. `rg-blend-development-20260926-a` completed;
   raw guards/repeat and durable archive passed. EM: absent11%, full12%, blend15%,
   independent reuse17%. Experiment complete; quality-benefit gate **not passed**.
-- [ ] **M2b/CB5 — R CacheBlend:** use the same selected rows/evidence on the
-  R/G path, passing unchanged numerical, ownership and repeat gates.
-  Fixed-row smoke passed 10 cases/160 generations/30,960 numerical checks;
-  full development and independent repeat are not yet admitted.
-  Run A was interrupted by host-memory pressure after74 cases; guarded run B
-  restarted from case1, passed fresh smoke, and reached59/100 development without
-  retries at this snapshot. See the recovery record in STATUS.md.
+- [x] **M2b/CB5 — Fixed-row R CacheBlend correctness:** matched 100-case
+  development and fresh repeat passed numerical, ownership, limit/zero and
+  raw-output guards in `rg-blend-r-20260928-b`. Exact agreement is with the
+  matched FP64 GPU control, not native BF16. Evidence-benefit gate still unpassed.
+- [ ] **M2b/CB5 — Request-time selection:** compute rows from current request
+  and loaded document KV, then share the map with W/R. `rg-blend-live-20261005-a`
+  is executing smoke prerequisites after48focused tests; full-model smoke and
+  100-case repeat pending. This is not yet a live inference endpoint.
 - [ ] **M3 — Quality confirmation:** freeze untouched confirmation data; meet
   the evidence-benefit and R non-inferiority gates; independently reproduce.
 - [x] **M4 — Recorded viewer prototype:** historical case replay/export exists
@@ -113,9 +115,10 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   R/LMCache path, then confirm at most two frozen selections. Historical
   delayed-injection sweeps do not complete this new-path milestone.
 - [ ] **Supporting performance work:** row-tiled diagnostics pass through 10,240
-  tokens; 12,288 hit the unchanged 12 GiB allocator cap. An allocation-layout
-  follow-up is queued, requiring exact 8K/10K overlap before 12K/16K attempts.
-  No practical crossover is established.
+  tokens; 12,288 hit the unchanged 12 GiB allocator cap. A separately labeled
+  24 GiB sweep is queued behind live-selection validation, requiring exact
+  8K/10K overlap before 12K/16K/20K. Prior host/GPU safety stops remain failures.
+  No new accepted longer point or practical crossover is established.
 - [x] **Public component release:** publish the extracted components and passing
   147-test receipt, with explicit reproduction limitations.
 - [ ] **Final handoff:** publish the portable full-model harness, accepted MVP

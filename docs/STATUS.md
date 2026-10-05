@@ -1,5 +1,33 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Superseding update — 2026-10-05 04:54 UTC
+
+Combined fixed-row `rg-blend-r-20260928-b` completed smoke, development100 and
+fresh100repeat. Numerical/ownership/raw checks PASS; W/R tokens and all-step
+logits agree exactly against the matched FP64 GPU reference. Native BF16 is a
+separate bridge, not bitwise-equivalent R arithmetic. Development evidence gain
+does not pass the frozen quality gate. Raw34927-file NAS archive verified:
+`14555cb526a9a6318d807f5f6241acceb48f02881c8941a00fd84feaff5638bd`.
+
+Request-time selection checkpoint `rg-blend-live-20261005-a`, source`ce2109f`,
+is now active on SaturnGPU3. A nativeBF16 layer0/layer1-V scout selects using
+actual request and loaded KV; fixed0.16 policy, shared map for W/R. Historical
+rows are post-selection regression controls only.48focused tests and715inherited
+tests pass; full-model smoke, development100 and fresh100 remain pending.
+No ratio tuning, new tolerance, confirmation-data access, or speed claim.
+Live request-time selection does not itself constitute a live serving endpoint.
+
+The prior24GiB recovery stopped during inherited tests when GPU free memory
+fell below48GiB; no accepted points and no automatic non-host retry. Earlier
+host-pressure stop and12GiB allocation failures remain failed. New independent
+`rg-sweep-recovery-20261005-a` is serialized behind quality, exact8K/10K anchors
+before12K/16K/20K, bounded host-only retries and separate attempt reports.
+
+Archival gateway repaired using an already authorized second host with the
+same NAS mount. Old failed sweep9files and failed report1file are now verified;
+new-run terminal report and raw archive workers are queued. Recorded reviews
+remain labeled recorded. Earlier progress paragraphs below are historical.
+
 ## Progress update — 2026-09-28 23:13 UTC
 
 Direct service/state inspection confirms the recovery chain is progressing.

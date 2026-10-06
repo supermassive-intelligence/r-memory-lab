@@ -1,5 +1,31 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Superseding update — 2026-10-06 23:16 UTC
+
+Request-time selection `rg-blend-live-20261005-a` passed100development and
+fresh100repeat; raw35,138-file NAS archive verified. Exact GPU/R tokens and
+step logits are against matched FP64 GPU arithmetic, not nativeBF16. The
+evidence-benefit gate remains unpassed; no held-out or speedup claim.
+
+Top-two routing and isolated rank-execution optimization each passed100queries.
+Original fresh-routing generation `rg-blend-online-20261005-a` passed development
+but its repeat exhausted bounded host-pressure retries. It is not admitted as
+a complete integration result. Recovery `rg-ranked-online-20261006-a` /862d62d
+is running with qualified exact-rank search and120-second stable admission;
+runtime thresholds unchanged.76focused and770inherited tests passed before
+model smoke; no full successor result yet.
+
+12K failure root cause:0.5GiB L1 crossed80% eviction watermark, yielding39RAM+
+9disk chunks on a supposed warm request. A separately declared1GiB capacity
+within the same40GiB host budget passed actual CPU transport:48disk then48RAM,
+identical KV.54-file diagnostic archive verified. Source00bd331; full8K..20K
+capacity series queued after quality and will not be merged with0.5GiB timings.
+No GPU OOM was responsible for this delivery guard failure.
+
+Archive verification repaired to permit long scans that keep producing checksum
+output and avoid recopying matching data. The large failed integration archive
+is being reverified; not yet claimed complete. Failed raw evidence preserved.
+
 ## Superseding update — 2026-10-05 05:12 UTC
 
 `rg-blend-live-20261005-a` smoke now has raw admission:10cases,160complete

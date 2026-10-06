@@ -48,8 +48,9 @@ position-, prompt-policy-, and layout-specific. This is not context-window exten
   historical failed arithmetic paths remain failed.
 - Live question-to-cache routing passed 100 cases; it is not yet a live generation endpoint.
 - Combined R/CacheBlend fixed-row 100-case development and fresh repeat passed
-  correctness gates. Request-time G-side row selection is now under validation;
-  held-out quality and a live answer endpoint remain unpassed.
+  correctness gates. Request-time G-side row selection also passed100 cases and
+  a fresh repeat. Full fresh-retrieval integration is recovering from host-pressure
+  interruptions; held-out quality and a live answer endpoint remain unpassed.
 - The row-tiled prefill sweep has accepted diagnostic points through 10,240 tokens;
   no practical cache/recompute crossover or physical NAND performance claim is established.
 
@@ -58,7 +59,7 @@ and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live m
 
 ## MVP checklist
 
-Last checked: **2026-10-05 05:12 UTC**. Checked means the stated subtask has
+Last checked: **2026-10-06 23:16 UTC**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -101,10 +102,10 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
   development and fresh repeat passed numerical, ownership, limit/zero and
   raw-output guards in `rg-blend-r-20260928-b`. Exact agreement is with the
   matched FP64 GPU control, not native BF16. Evidence-benefit gate still unpassed.
-- [ ] **M2b/CB5 — Request-time selection:** compute rows from current request
+- [x] **M2b/CB5 — Request-time selection:** compute rows from current request
   and loaded document KV, then share the map with W/R. `rg-blend-live-20261005-a`
-  passed its10-case smoke (160 generations,30,960 numerical checks);100-case
-  development and fresh repeat are running/queued. Not a live inference endpoint.
+  passed10-case smoke,100-case development and independent100repeat, with
+  263,952 numerical checks per100-case run and verified raw archival. Not a live endpoint.
 - [ ] **M3 — Quality confirmation:** freeze untouched confirmation data; meet
   the evidence-benefit and R non-inferiority gates; independently reproduce.
 - [x] **M4 — Recorded viewer prototype:** historical case replay/export exists

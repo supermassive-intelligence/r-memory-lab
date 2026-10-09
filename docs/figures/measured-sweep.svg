@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680">
+<title>Measured partial KV reuse sweep: diagnostic only</title>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Arial, sans-serif" fill="#172033">
+<text x="45" y="32" font-size="23" >Real measurements — diagnostic sweep only</text>
+<text x="45" y="59" font-size="14" >Qwen2.5-3B · BF16 · row-tiled-eager-128 · batch 1 · RTX PRO 6000 Blackwell Workstation</text>
+<text x="45" y="82" font-size="14" >Shared GPU · 2 CPU cores · HDD-backed filesystem, NOT NAND · OS cache not flushed</text>
+<text x="45" y="105" font-size="14" >Each point: median of 10 cases × 3 repeats; per-length correctness / raw-output audits PASS</text>
+<text x="45" y="128" font-size="13" >24 GiB prefill allocator cap · L1 1 GiB · separate budget series · not serving latency</text>
+<text x="70" y="162" font-size="15" fill="#334155">Staged recompute</text>
+<text x="360" y="162" font-size="15" fill="#0072b2">Filesystem L2 reload</text>
+<text x="650" y="162" font-size="15" fill="#d55e00">LMCache L1 hit</text>
+<line x1="95" x2="875" y1="495.0" y2="495.0" stroke="#e2e8f0"/>
+<text x="78" y="499.0" font-size="12" text-anchor="end">0</text>
+<line x1="95" x2="875" y1="444.1666666666667" y2="444.1666666666667" stroke="#e2e8f0"/>
+<text x="78" y="448.1666666666667" font-size="12" text-anchor="end">1100</text>
+<line x1="95" x2="875" y1="393.33333333333337" y2="393.33333333333337" stroke="#e2e8f0"/>
+<text x="78" y="397.33333333333337" font-size="12" text-anchor="end">2200</text>
+<line x1="95" x2="875" y1="342.5" y2="342.5" stroke="#e2e8f0"/>
+<text x="78" y="346.5" font-size="12" text-anchor="end">3300</text>
+<line x1="95" x2="875" y1="291.6666666666667" y2="291.6666666666667" stroke="#e2e8f0"/>
+<text x="78" y="295.6666666666667" font-size="12" text-anchor="end">4400</text>
+<line x1="95" x2="875" y1="240.83333333333331" y2="240.83333333333331" stroke="#e2e8f0"/>
+<text x="78" y="244.83333333333331" font-size="12" text-anchor="end">5500</text>
+<line x1="95" x2="875" y1="190.0" y2="190.0" stroke="#e2e8f0"/>
+<text x="78" y="194.0" font-size="12" text-anchor="end">6600</text>
+<text x="20" y="183" font-size="13" >TTFT (ms)</text>
+<text x="95.0" y="520" font-size="13" text-anchor="middle">8192</text>
+<text x="284.9527780544963" y="520" font-size="13" text-anchor="middle">10240</text>
+<text x="440.15549849281285" y="520" font-size="13" text-anchor="middle">12288</text>
+<text x="685.0472219455037" y="520" font-size="13" text-anchor="middle">16384</text>
+<text x="875.0" y="520" font-size="13" text-anchor="middle">20480</text>
+<text x="370" y="546" font-size="14" >Cached prefix tokens (log₂ axis)</text>
+<polyline points="95.00,454.90 284.95,432.34 440.16,397.72 685.05,311.60 875.00,196.19" fill="none" stroke="#334155" stroke-width="2.5"/>
+<circle cx="95.00" cy="454.90" r="4" fill="#334155"><title>8192 tokens: 867.65 ms</title></circle>
+<circle cx="284.95" cy="432.34" r="4" fill="#334155"><title>10240 tokens: 1355.86 ms</title></circle>
+<circle cx="440.16" cy="397.72" r="4" fill="#334155"><title>12288 tokens: 2105.16 ms</title></circle>
+<circle cx="685.05" cy="311.60" r="4" fill="#334155"><title>16384 tokens: 3968.69 ms</title></circle>
+<circle cx="875.00" cy="196.19" r="4" fill="#334155"><title>20480 tokens: 6466.05 ms</title></circle>
+<polyline points="95.00,410.92 284.95,390.57 440.16,373.12 685.05,332.12 875.00,265.10" fill="none" stroke="#0072b2" stroke-width="2.5"/>
+<circle cx="95.00" cy="410.92" r="4" fill="#0072b2"><title>8192 tokens: 1819.34 ms</title></circle>
+<circle cx="284.95" cy="390.57" r="4" fill="#0072b2"><title>10240 tokens: 2259.85 ms</title></circle>
+<circle cx="440.16" cy="373.12" r="4" fill="#0072b2"><title>12288 tokens: 2637.38 ms</title></circle>
+<circle cx="685.05" cy="332.12" r="4" fill="#0072b2"><title>16384 tokens: 3524.58 ms</title></circle>
+<circle cx="875.00" cy="265.10" r="4" fill="#0072b2"><title>20480 tokens: 4974.93 ms</title></circle>
+<polyline points="95.00,421.56 284.95,405.70 440.16,386.89 685.05,344.76 875.00,288.37" fill="none" stroke="#d55e00" stroke-width="2.5"/>
+<circle cx="95.00" cy="421.56" r="4" fill="#d55e00"><title>8192 tokens: 1589.12 ms</title></circle>
+<circle cx="284.95" cy="405.70" r="4" fill="#d55e00"><title>10240 tokens: 1932.44 ms</title></circle>
+<circle cx="440.16" cy="386.89" r="4" fill="#d55e00"><title>12288 tokens: 2339.41 ms</title></circle>
+<circle cx="685.05" cy="344.76" r="4" fill="#d55e00"><title>16384 tokens: 3251.14 ms</title></circle>
+<circle cx="875.00" cy="288.37" r="4" fill="#d55e00"><title>20480 tokens: 4471.40 ms</title></circle>
+<text x="45" y="580" font-size="14" >Parent status: complete. Only completed, audited lengths shown; no failed or missing points.</text>
+<text x="45" y="604" font-size="12" >Includes lookup, reconstruction, H2D and generation; excludes HTTP, tokenization, queueing and population.</text>
+<text x="45" y="626" font-size="12" >Synthetic-length prompts; staged prefill baseline. Lines connect observed medians, not a fitted model.</text>
+<text x="45" y="653" font-size="12" >Run: rg-l1-sweep-20261006-a · instrument: 00bd331 · no extrapolation or production-speed claim</text>
+</g>
+</svg>

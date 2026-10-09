@@ -1,5 +1,33 @@
 # Verified checkpoint — 2026-09-26 18:33 UTC
 
+## Superseding update — 2026-10-09; project paused
+
+All identified project experiment/demo/archive jobs stopped at user request.
+No automatic continuation. No raw data deleted; unrelated workloads untouched.
+
+- `rg-ranked-online-20261006-a`: smoke10/development100/fresh100 PASS. Each
+  100-case stage has1600generations/263952numerical checks. All-query EM R/W15%,
+  no-evidence11%;+4pp exploratory95%[-1,+10]. Quality-benefit gate unpassed.
+  Exact100/100 tokens/step logits applies to matched FP64 GPU/R, not nativeBF16.
+  Raw35137files NASverified, manifest
+  `9eea842dece3195e01b559ee89483427d5f513b68c4ab8f1f0774ed1cc42575c`.
+- `rg-http-20261007-a`: actual HTTP smoke10 + fresh10repeat PASS,160generations
+  and30960numerical checks perstage. Raw/client/request/response bindings rehashed
+  October9. Fixed development questions only. Raw3768files NASverified,
+  manifest `130e7944e4591d92bf0aea2eb0f011f2a1a00e6d38af68b6009fb96fa439852b`.
+  Separate manual demo stopped before first request; no manual-session admission.
+- `rg-l1-sweep-20261006-a`: all8K/10K/12K/16K/20K raw guards PASS. Separate1GiB
+  L1/24GiB allocator configuration; first sampled cache advantage16K in a shared
+  tiled-eager HDD diagnostic. [Chart and CSV](SWEEP.md). Raw17693files NASverified,
+  manifest `3f304fab976d365157da2cee3b55fb8ef6b854a5eecf75e4e3e5f0351d3baa25`.
+
+Untouched quality confirmation, free-form serving, composed R-path delayed
+consumption and practical R/NAND latency remain unpassed. Failed historical
+runs remain failed. These results do not reproduce CacheBlend's paper numbers.
+Public code now includes the portable CacheBlend/R arithmetic, selection,
+routing and exact-ranking components; fleet-specific generation/HTTP launchers
+remain in the research archive. Component tests are not full-model admission.
+
 ## Superseding update — 2026-10-06 23:16 UTC
 
 Request-time selection `rg-blend-live-20261005-a` passed100development and

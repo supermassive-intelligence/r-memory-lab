@@ -1,6 +1,6 @@
 # Quality-first MVP roadmap
 
-Snapshot: 2026-10-05 04:54 UTC. The [README task list](../README.md#mvp-checklist)
+Snapshot: 2026-10-09; PAUSED at user request. The [README task list](../README.md#mvp-checklist)
 is the compact completion checklist; [STATUS.md](STATUS.md) carries run identities.
 
 September 26 scope amendment: CacheBlend is required, not a post-MVP option.
@@ -11,20 +11,18 @@ the numerical, quality, repetition or evidence-admission contracts.
 |---|---|---|
 | Stored KV fidelity | Byte-identical reload; named native/zero/miss generation controls; independent repeat | Historical retrieved-cache 100-case development + repeat passed |
 | Live retrieval routing | Question-only retrieval, compatible stable key, actual LMCache delivery, raw payload audit | 100/100 and all ten ten-case raw audits PASS; not live generation |
-| Live generation | Connect fresh routing to generation; complete controls and raw logit audit | Not complete |
+| Live generation | Connect fresh routing to generation; complete controls and raw logit audit | Development10/100/fresh100 PASS; bounded HTTP10+fresh10 PASS; services stopped |
 | Emulated R attention | Matched numerical checks, no persistent GPU duplicate of R-owned KV, repeat | FP64 retrieved-prefix 100 cases + fresh repeat PASS; unchanged bounds; evidence quality negative |
-| Required CacheBlend composition (M2b) | Independent document KV persistence, position remapping, causal-corrected selective recomputation, matched GPU/R controls | Fixed-row GPU/R100+repeat raw checks/archive passed; quality gate unpassed; request-time selection validation active |
+| Required CacheBlend composition (M2b) | Independent document KV persistence, position remapping, causal-corrected selective recomputation, matched GPU/R controls | Fresh retrieval/selection100+repeat passed; matched FP64 W/R exact; quality-benefit gate unpassed |
 | Quality confirmation | Frozen untouched data, declared evidence gain and R non-inferiority bounds | Not passed |
 | Practical serving | End-to-end workload, matched uncached/cached controls, TTFT/completion/throughput | Not established |
-| Longer prefill | Exact native overlap before admitting memory-bounded attention | Row-tiled through10,240 PASS;12GiB allocation failure preserved; separate24GiB8K–20K recovery queued behind selector, no new accepted points |
+| Longer prefill | Exact native overlap before admitting memory-bounded attention | Separate24GiB/1GiB L1 sweep through20,480 PASS; diagnostic cache advantage first sampled16K; older failures preserved |
 | Portable public harness | Explicit model/data paths, upstream-compatible integration, reproducible accepted runs | Component release available; full harness pending |
 
-Immediate order: validate request-time G-side selection shared by matched W/R,
-then connect fresh routing to generation. Fixed-row100+repeat correctness and
-raw archive have passed; quality benefit has not. Only then freeze untouched
-quality confirmation. Do not tune the selector on confirmation data.
-The new selector adds a GPU scout and does not claim a speed improvement.
-The separate24GiB sweep remains serialized and preserves every failed attempt.
+No work is queued. If resumed, validate a fresh manual browser session, prepare
+the untouched sample/exposure audit and freeze confirmation design. Do not tune
+the selector on confirmation data. The selector adds a GPU scout and does not
+claim a speed improvement. Keep the measured sweep's resource series separate.
 Strict-prefix correctness alone cannot complete the MVP. The long-prefill
 allocator issue is a separate diagnostic task, not grounds to relax quality gates.
 

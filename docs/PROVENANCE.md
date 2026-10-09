@@ -1,5 +1,19 @@
 # Source provenance and publication scope
 
+## October 9 component update
+
+Seven additional modules and matching tests are copied unchanged from research
+revision `7b4a653`: document cache identity/composition, selective prefill,
+matched R/G CacheBlend, document routing, live row selection, exact-tie rank
+execution and FP64 accumulation. Tiled-softmax implementation/test are refreshed
+from the same revision. SHA256 bindings are in
+[the incremental manifest](source-manifest-20261009.json); these supersede the
+two older tiled-softmax entries below. The full model/HTTP fleet harness remains
+excluded rather than being represented as portable. The measured SVG/CSV contain
+aggregate diagnostics only; infrastructure labels were removed from the chart.
+
+## Original extraction
+
 This repository starts with a curated snapshot, not the private workspace's full
 Git history. The source workspace revision is
 `f683642` (2026-09-26). The existing repositories/worktrees were not reset,

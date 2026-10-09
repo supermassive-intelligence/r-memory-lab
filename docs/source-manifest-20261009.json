@@ -1,0 +1,86 @@
+{
+  "source_revision": "7b4a65303170f536f37c67a43220052965d3ff90",
+  "files": [
+    {
+      "path": "experimental/rg_blend_cache.py",
+      "sha256": "dfec81f3788a307a1d4e50867167f2b0f4855144fd1070a1f712662852d72b18",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "tests/test_rg_blend_cache.py",
+      "sha256": "86131fd37860944432a35aee5af1d5975c3703c59ce681b2e07612354999dd84",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "experimental/rg_blend_prefill.py",
+      "sha256": "001d91b10d12fca482683733c64072b93e5d8f212c32860f359dabb68e2ab698",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "tests/test_rg_blend_prefill.py",
+      "sha256": "2c464c2325832d0e562be6035eec7b3bac61aa44652ba82a2150319f8da4a9ab",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "experimental/rg_blend_split.py",
+      "sha256": "6e246b09b37db8a601312e2a5dfe32be0b5aa28f3726183197d16e46ff92ee95",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "tests/test_rg_blend_split.py",
+      "sha256": "94bf424072f4b65d5a975256bef675d52be3668f3b1e9666ed7639c453655bf1",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "experimental/rg_blend_route.py",
+      "sha256": "8b53a9595bdac3eb503bcf42568e12571af031e13fdb6a499b915ff8f3515f13",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "tests/test_rg_blend_route.py",
+      "sha256": "62686334f42f6f04fbc402e9032bf332ad8f513011a3034be06b16d90e1dd238",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "experimental/rg_live_selection.py",
+      "sha256": "705c8b2c13618f2a0c650830128176584ea7e0f34c4565c6d678ec9c4f956348",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "tests/test_rg_live_selection.py",
+      "sha256": "10d72acb94e70bbfa8e76083048c1a2df095825555b2d40e5d671173f2e506b6",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "experimental/rg_ranked_search.py",
+      "sha256": "3e3b28da5f22284bee2deadb2dd2fb7d35285431ac63adf5f7d5c8196ddc21e1",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "tests/test_rg_ranked_search.py",
+      "sha256": "14dd66d8c68df654ca5b6f7f1c4810e221812897a201f4bb703796a11a36c4a3",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "experimental/rg_fp64_accumulation.py",
+      "sha256": "c5c5b1e85a3c25a228af86f21b55ddc6e4b8216373908db6ee4b243e8a21dd90",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "tests/test_rg_fp64_accumulation.py",
+      "sha256": "03bbda2f93cf794146ffd28e44a5d013c57cabc63147fb5fab58a6f780f02c0b",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "experimental/rg_tiled_softmax.py",
+      "sha256": "a41d9406e2ca6a6f0efbd44ba9f2f02d0cc7af3ee4b1e601b27da5c7319db203",
+      "mode": "unchanged from source"
+    },
+    {
+      "path": "tests/test_rg_tiled_softmax.py",
+      "sha256": "3b8104f80fe0cfd1862aa78a94c5872d46d348e66820ce32c9267ea07481ce70",
+      "mode": "unchanged from source"
+    }
+  ],
+  "note": "Add seven modules/tests and refresh tiled-softmax module/test. All other original components unchanged; original extraction manifest retained."
+}

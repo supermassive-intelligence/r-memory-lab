@@ -14,10 +14,12 @@ def test_native_exact_rows_and_masks(length):
     mask=torch.zeros(1,1,length,length+7,dtype=q.dtype)
     mask[..., -3:]=torch.finfo(q.dtype).min
     module=SimpleNamespace(num_key_value_groups=2,training=False)
+    before=[x.clone() for x in (q,k,v,mask)]
     with torch.inference_mode():
         a=eager_attention_forward(module,q,k,v,mask,.25)
         b=tiled_eager(module,q,k,v,mask,.25)
         assert all(torch.equal(x,y) for x,y in zip(a,b))
+        assert all(torch.equal(x,y) for x,y in zip((q,k,v,mask),before))
 
 
 def test_training_and_grad_are_not_silently_supported():

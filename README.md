@@ -41,25 +41,32 @@ position-, prompt-policy-, and layout-specific. This is not context-window exten
 
 ## Current checkpoint
 
+**Paused at the user's request, October 9, 2026.** No experiments or demo
+services are running for this project; publication does not resume them.
+
 - Retrieved-document stable-cache reuse passed a 100-case development evaluation
   and independent repeat, preserving native-control tokens and per-step logits.
 - The FP64-accumulation retrieved-prefix R path passed 100 cases and a fresh
   repeat under unchanged numerical gates. Evidence quality did not improve;
   historical failed arithmetic paths remain failed.
-- Live question-to-cache routing passed 100 cases; it is not yet a live generation endpoint.
+- Fresh question-to-cache routing and generation passed 100 development cases
+  and an independent 100-case repeat, including actual LMCache reload.
 - Combined R/CacheBlend fixed-row 100-case development and fresh repeat passed
   correctness gates. Request-time G-side row selection also passed100 cases and
-  a fresh repeat. Full fresh-retrieval integration is recovering from host-pressure
-  interruptions; held-out quality and a live answer endpoint remain unpassed.
-- The row-tiled prefill sweep has accepted diagnostic points through 10,240 tokens;
-  no practical cache/recompute crossover or physical NAND performance claim is established.
+  a fresh repeat. Matched FP64 GPU/R tokens and every-step logits agree on100/100.
+  Development EM15% versus11% without evidence is inconclusive (+4pp;95%[-1,+10]).
+- Bounded live HTTP transport passed ten questions and a fresh ten-question
+  repeat. The separate manual demo was stopped before its first request.
+- The separate1GiB L1/24GiB allocator sweep passed through20,480tokens. Cache
+  first beat staged recompute at the measured16K point; this is not a production
+  serving or physical NAND claim. [Curve and measured data](docs/SWEEP.md).
 
 See [status and provenance](docs/STATUS.md), [acceptance contracts](docs/ACCEPTANCE.md),
 and the [MVP roadmap](docs/ROADMAP.md). Status is a dated snapshot, not a live monitor.
 
 ## MVP checklist
 
-Last checked: **2026-10-06 23:16 UTC**. Checked means the stated subtask has
+Last checked: **2026-10-09**. Checked means the stated subtask has
 supporting evidence, not that its whole milestone has passed. Historical research
 results are separate from the code included in this component release.
 Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
@@ -78,10 +85,11 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
 - [x] **M0/M2 — Retrieved-prefix R numerical admission:** FP64 accumulation
   passed 100 cases and a fresh repeat under unchanged gates. This is not native
   bitwise identity, combined CacheBlend admission, or a quality-benefit pass.
-- [ ] **M2/M4 — Live generation:** connect fresh routing to GPU generation with
-  native/zero/miss controls, then to validated R-side attention. Implemented in
-  the research harness;76focused tests pass. `rg-blend-online-20261005-a` is
-  queued behind the sweep and routing/selection gates. No HTTP endpoint yet.
+- [x] **M2/M4 — Development live generation:** fresh routing through LMCache and
+  GPU/R generation passed10/100/fresh100 in `rg-ranked-online-20261006-a`.
+- [x] **M4 — Bounded HTTP transport:** ten actual HTTP-triggered questions and
+  fresh ten-case repeat passed in `rg-http-20261007-a`. Fixed development
+  questions, not arbitrary-prompt serving; the service is now stopped.
 - [x] **M2b/CB0 — CacheBlend reference:** recover the completed corrected
   Blackwell port, repeats and failed original-mask diagnosis.
 - [x] **M2b/CB1–CB2 — Ten-case document persistence/composition:** independently capture
@@ -116,11 +124,9 @@ Run IDs and claim boundaries are in [STATUS.md](docs/STATUS.md).
 - [ ] **M5 — Delayed-consumption extension:** run all K=0…36 on the validated
   R/LMCache path, then confirm at most two frozen selections. Historical
   delayed-injection sweeps do not complete this new-path milestone.
-- [ ] **Supporting performance work:** row-tiled diagnostics pass through 10,240
-  tokens; 12,288 hit the unchanged 12 GiB allocator cap. A separately labeled
-  24 GiB sweep is queued behind live-selection validation, requiring exact
-  8K/10K overlap before 12K/16K/20K. Prior host/GPU safety stops remain failures.
-  No new accepted longer point or practical crossover is established.
+- [x] **Supporting measured sweep:** separately declared24GiB allocator/1GiB L1
+  series passed8K/10K/12K/16K/20K raw audits. Shared-resource timing diagnostic
+  only; production latency remains unpassed. Older failures are preserved.
 - [x] **Public component release:** publish the extracted components and passing
   147-test receipt, with explicit reproduction limitations.
 - [ ] **Final handoff:** publish the portable full-model harness, accepted MVP

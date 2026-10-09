@@ -1,0 +1,16 @@
+run_id,prefix_tokens,arm,requests,allocator_cap_gib,l1_capacity_gib,median_ttft_ms,correctness_guard,latency_admissible
+rg-l1-sweep-20261006-a,8192,no-cache,30,24,1,867.646339465864,PASS,False
+rg-l1-sweep-20261006-a,8192,disk-reload,30,24,1,1819.3415540154092,PASS,False
+rg-l1-sweep-20261006-a,8192,ram-hit,30,24,1,1589.115547016263,PASS,False
+rg-l1-sweep-20261006-a,10240,no-cache,30,24,1,1355.8589620224666,PASS,False
+rg-l1-sweep-20261006-a,10240,disk-reload,30,24,1,2259.849618480075,PASS,False
+rg-l1-sweep-20261006-a,10240,ram-hit,30,24,1,1932.4411264969967,PASS,False
+rg-l1-sweep-20261006-a,12288,no-cache,30,24,1,2105.164162494475,PASS,False
+rg-l1-sweep-20261006-a,12288,disk-reload,30,24,1,2637.38168348209,PASS,False
+rg-l1-sweep-20261006-a,12288,ram-hit,30,24,1,2339.412239001831,PASS,False
+rg-l1-sweep-20261006-a,16384,no-cache,30,24,1,3968.6937595251948,PASS,False
+rg-l1-sweep-20261006-a,16384,disk-reload,30,24,1,3524.5792504865676,PASS,False
+rg-l1-sweep-20261006-a,16384,ram-hit,30,24,1,3251.1356769828126,PASS,False
+rg-l1-sweep-20261006-a,20480,no-cache,30,24,1,6466.047389490996,PASS,False
+rg-l1-sweep-20261006-a,20480,disk-reload,30,24,1,4974.926423485158,PASS,False
+rg-l1-sweep-20261006-a,20480,ram-hit,30,24,1,4471.3954765175,PASS,False

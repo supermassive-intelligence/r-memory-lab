@@ -1,5 +1,28 @@
 # Public snapshot validation
 
+## Current publication — 2026-10-09
+
+The complete component suite at commit
+`c8de68a38b04e8f20178b4dffda4bb6713448c6f` passed:
+**212 passed in 13.67 seconds**. The run used an isolated clone, CPU-only
+execution on two CPU cores, and the same package versions listed below.
+No GPU experiment or stopped service was restarted.
+
+```bash
+CUDA_VISIBLE_DEVICES="" PYTHONDONTWRITEBYTECODE=1 \
+  OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 \
+  taskset -c 0,1 python -m pytest tests -q \
+  --junitxml=public-component-tests.xml
+```
+
+The sixteen newly added or refreshed module/test files were byte-compared with
+the research source. Their source revision and SHA-256 bindings are recorded in
+[`source-manifest-20261009.json`](source-manifest-20261009.json).
+Component success does not admit held-out model quality, paper-number
+reproduction, or production performance; those gates remain separate.
+
+## Original publication — 2026-09-26
+
 The complete included component suite passed on the allocated research machine:
 **147 passed, zero failed, zero errors, zero skipped** (2026-09-26).
 Pytest reported4.33 seconds; the JUnit suite timer was4.297 seconds.
